@@ -5,5 +5,5 @@ require "nvchad.options"
 local o = vim.o
 o.cursorlineopt = "both" -- to enable cursorline!
 o.wrap = false
-o.mouse = "n"
+o.mouse = "nv"
 o.colorcolumn = "80"
