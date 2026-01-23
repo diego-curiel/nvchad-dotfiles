@@ -34,4 +34,10 @@ return {
       require "configs.nvim-ufo"
     end,
   },
+
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    event = "VeryLazy",
+  },
 }
