@@ -1,22 +1,38 @@
 require("nvchad.configs.lspconfig").defaults()
-local lspconfig = require "lspconfig"
+local lspconfig = vim.lsp.config
 
 local servers = {
-  ts_ls = { filetypes = {
-    "javascript",
-    "typescript",
+  ts_ls = {
+    filetypes = {
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact",
+    },
+  },
+  html = {
+    filetypes = {
+      "html",
+      "javascriptreact",
+      "typescriptreact",
+    },
+  },
+  emmet_language_server = {
+    "html",
     "javascriptreact",
-    "typescriptreact",
-  } },
-  html = { filetypes = { "html", "javascriptreact", "typescriptreact" } },
-  emmet_language_server = { "html", "javascriptreact", "typescript" },
+    "typescript",
+  },
   cssls = {},
   pyright = {},
-  intelephense = { filetypes = { "php" } },
+  intelephense = {
+    filetypes = {
+      "php",
+    },
+  },
 }
 
 for name, opts in pairs(servers) do
-  lspconfig[name].setup(opts)
+  lspconfig(name, opts)
 end
 
 -- read :h vim.lsp.config for changing options of lsp servers
