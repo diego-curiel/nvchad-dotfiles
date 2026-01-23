@@ -6,7 +6,8 @@
 local M = {}
 
 M.base46 = {
-  theme = "everblush",
+  theme = "catppuccin-latte",
+  theme_toggle = { "catppuccin", "catppuccin-latte" },
   hl_override = {
     Comment = {
       italic = true,
@@ -17,7 +18,7 @@ M.base46 = {
       fg = "#a3a3a3",
     },
   },
-  transparency = true,
+  transparency = false,
 }
 
 M.nvdash = { load_on_startup = true }
