@@ -11,6 +11,12 @@ map(
   "<cmd> lua require('base46').toggle_transparency() <cr>",
   { noremap = true, silent = true, desc = "Toggle Background Transparency" }
 )
+map(
+  "n",
+  "<leader>tl",
+  "<cmd> lua require('base46').toggle_theme() <cr>",
+  { noremap = true, silent = true, desc = "Toggle Light/Dark theme" }
+)
 -- Move lines up and down
 map("n", "<A-j>", ":m .+1 <CR>==")
 map("n", "<A-k>", ":m .-2 <CR>==")
