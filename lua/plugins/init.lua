@@ -6,12 +6,12 @@ return {
   },
 
   -- These are some examples, uncomment them if you want to see them work!
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require "configs.lspconfig"
-    end,
-  },
+  -- {
+  --   "neovim/nvim-lspconfig",
+  --   config = function()
+  --     require "configs.lspconfig"
+  --   end,
+  -- },
 
   -- test new blink
   { import = "nvchad.blink.lazyspec" },
@@ -39,5 +39,15 @@ return {
     "catppuccin/nvim",
     name = "catppuccin",
     event = "VeryLazy",
+  },
+
+  {
+    "mason-org/mason-lspconfig.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      "mason-org/mason.nvim",
+      "neovim/nvim-lspconfig",
+    },
+    opts = require "configs.mason-lspconfig",
   },
 }
