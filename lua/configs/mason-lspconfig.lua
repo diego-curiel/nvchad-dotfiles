@@ -1,13 +1,14 @@
-local lsp = { "biome", "emmetls", "jsonls", "luals", "pyright", "intelephense" }
-
-local formatters = { "stylua", "autoflake", "autopep8", "prettier", "duster" }
+local lsp = {
+  "biome",
+  "emmet_language_server",
+  "jsonls",
+  "lua_ls",
+  "pyright",
+  "intelephense",
+}
 
 return {
-  ensure_installed = vim.list_extend(lsp, formatters),
+  ensure_installed = lsp,
   auto_update = true,
   run_on_start = true,
-
-  automatic_enable = {
-    exclude = formatters,
-  },
 }
